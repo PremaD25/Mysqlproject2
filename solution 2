@@ -1,0 +1,21 @@
+CREATE DATABASE University;
+USE University;
+CREATE TABLE Students (
+  student_id INT PRIMARY KEY,
+  student_name VARCHAR(50),
+  student_age INT,
+  student_major VARCHAR(50)
+);
+INSERT INTO Students (student_id, student_name, student_age, student_major)
+VALUES
+  (1, 'prema', 20, 'Computer Science'),
+  (2, 'saras', 22, 'Engineering'),
+  (3, 'renuka', 19, 'Mathematics'),
+  (4, 'gayu', 21, 'Computer Science'),
+  (5, 'suganya', 23, 'Business Administration');
+
+SELECT * FROM Students;
+SELECT student_name FROM Students WHERE student_major = 'Computer Science';
+SELECT * FROM Students ORDER BY student_age DESC LIMIT 1;
+UPDATE Students SET student_major = 'Psychology' WHERE student_id = 3;
+DELETE FROM Students WHERE student_id = 4;
